@@ -1,0 +1,35 @@
+model:
+  tokenizer_path: afriberta_tokenizer_70k
+  layer_norm_eps: 1.0e-05
+  output_past: True
+  type_vocab_size: 1
+  max_length: 512
+  hidden_size: 768
+  num_attention_heads: 6
+  num_hidden_layers: 8
+  intermediate_size: 3072
+
+training:
+  gradient_accumulation_steps: 8
+  resume_training: False
+  ignore_data_skip: False
+  train_from_scratch: True
+  use_whole_word_mask: False
+  lang_sampling_factor: 1.0
+  overwrite_output_dir: False
+  seed: 999
+  max_steps: 460000
+  per_device_train_batch_size: 32
+  per_device_eval_batch_size: 32
+  dataloader_num_workers: 6
+  fp16: True
+  save_steps: 20000
+  save_total_limit: 10
+  learning_rate: 0.0001
+  warmup_steps: 40000
+
+data:
+  train: data/train/ # files must be stored as train.{lang} eg. train.hausa
+  eval: 
+    all: data/eval/all_eval.txt # combined evaluation dataset
+    per_lang: data/eval/ # files must be stored as eval.{lang} eg. eval.hausa
