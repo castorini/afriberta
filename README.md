@@ -1,6 +1,6 @@
 # AfriBERTa: Exploring the Viability of Pretrained Multilingual Language Models for Low-resourced Languages
 
-This repository contains the code for the paper ***Small Data? No Problem! Exploring the Viability of Pretrained Multilingual Language Models for Low-resourced Languages*** which appears in the first workshop on Multilingual Representation Learning at EMNLP 2021. 
+This repository contains the code for the paper [***Small Data? No Problem! Exploring the Viability of Pretrained Multilingual Language Models for Low-resourced Languages***](https://aclanthology.org/2021.mrl-1.11/) which appears in the first workshop on Multilingual Representation Learning at EMNLP 2021. 
 
 AfriBERTa was trained on 11 languages - Afaan  Oromoo (also  called  Oromo), Amharic, Gahuza (a mixed language containing Kinyarwanda and Kirundi), Hausa, Igbo, Nigerian Pidgin, Somali, Swahili, Tigrinya and Yorùbá.
 AfriBERTa was evaluated on NER and text classification spanning 10 languages (some of which it was not pretrained on).
