@@ -45,5 +45,18 @@ This script will:
 
 
 ## Citation
-
-Coming soon!
+```
+@inproceedings{ogueji-etal-2021-small,
+    title = "Small Data? No Problem! Exploring the Viability of Pretrained Multilingual Language Models for Low-resourced Languages",
+    author = "Ogueji, Kelechi  and
+      Zhu, Yuxin  and
+      Lin, Jimmy",
+    booktitle = "Proceedings of the 1st Workshop on Multilingual Representation Learning",
+    month = nov,
+    year = "2021",
+    address = "Punta Cana, Dominican Republic",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.mrl-1.11",
+    pages = "116--126",
+}
+```
