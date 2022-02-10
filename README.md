@@ -7,7 +7,7 @@ AfriBERTa was evaluated on NER and text classification spanning 10 languages (so
 It outperformed mBERT and XLM-R on several languages and is very competitive overall.
 
 
-## Pretrained Models and Datasets
+## Pretrained Models and Dataset
 
 **Models:**
 
