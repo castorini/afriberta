@@ -19,14 +19,14 @@ We release the following pretrained models:
 
 **Dataset**:
 
-https://huggingface.co/datasets/castorini/afriberta
+https://huggingface.co/datasets/castorini/afriberta-corpus
 
 ## Reproducing Experiments
 
 ### Datasets and Tokenizer
 Below are details on how to obtain the datasets and trained sentencepiece tokenizer:
 
-**Language Modelling**: The data for language modelling can be downloaded from [this URL](https://huggingface.co/datasets/castorini/afriberta)
+**Language Modelling**: The data for language modelling can be downloaded from [this URL](https://huggingface.co/datasets/castorini/afriberta-corpus)
 
 **NER**: To obtain the NER dataset, please download it from [this repository](https://github.com/masakhane-io/masakhane-ner)
 
