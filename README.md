@@ -7,7 +7,9 @@ AfriBERTa was evaluated on NER and text classification spanning 10 languages (so
 It outperformed mBERT and XLM-R on several languages and is very competitive overall.
 
 
-## Pretrained models
+## Pretrained Models and Datasets
+
+**Models:**
 
 We release the following pretrained models:
 
@@ -15,13 +17,16 @@ We release the following pretrained models:
 - [AfriBERTa Base](https://huggingface.co/castorini/afriberta_base) (111M params)
 - [AfriBERTa Large](https://huggingface.co/castorini/afriberta_large) (126M params)
 
+**Dataset**:
+
+https://huggingface.co/datasets/castorini/afriberta
 
 ## Reproducing Experiments
 
 ### Datasets and Tokenizer
 Below are details on how to obtain the datasets and trained sentencepiece tokenizer:
 
-**Language Modelling**: The data for language modelling can be downloaded from [this URL](https://drive.google.com/file/d/1LLMpvoWC_LgwGw9auLbF7tiolAvkncp4/view?usp=sharing)
+**Language Modelling**: The data for language modelling can be downloaded from [this URL](https://huggingface.co/datasets/castorini/afriberta)
 
 **NER**: To obtain the NER dataset, please download it from [this repository](https://github.com/masakhane-io/masakhane-ner)
 
