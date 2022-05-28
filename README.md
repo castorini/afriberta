@@ -1,13 +1,15 @@
 # AfriBERTa: Exploring the Viability of Pretrained Multilingual Language Models for Low-resourced Languages
 
-This repository contains the code for the paper ***Small Data? No Problem! Exploring the Viability of Pretrained Multilingual Language Models for Low-resourced Languages*** which appears in the first workshop on Multilingual Representation Learning at EMNLP 2021. 
+This repository contains the code for the paper [***Small Data? No Problem! Exploring the Viability of Pretrained Multilingual Language Models for Low-resourced Languages***](https://aclanthology.org/2021.mrl-1.11/) which appears in the first workshop on Multilingual Representation Learning at EMNLP 2021. 
 
 AfriBERTa was trained on 11 languages - Afaan  Oromoo (also  called  Oromo), Amharic, Gahuza (a mixed language containing Kinyarwanda and Kirundi), Hausa, Igbo, Nigerian Pidgin, Somali, Swahili, Tigrinya and Yorùbá.
 AfriBERTa was evaluated on NER and text classification spanning 10 languages (some of which it was not pretrained on).
 It outperformed mBERT and XLM-R on several languages and is very competitive overall.
 
 
-## Pretrained models
+## Pretrained Models and Dataset
+
+**Models:**
 
 We release the following pretrained models:
 
@@ -15,13 +17,16 @@ We release the following pretrained models:
 - [AfriBERTa Base](https://huggingface.co/castorini/afriberta_base) (111M params)
 - [AfriBERTa Large](https://huggingface.co/castorini/afriberta_large) (126M params)
 
+**Dataset**:
+
+https://huggingface.co/datasets/castorini/afriberta-corpus
 
 ## Reproducing Experiments
 
 ### Datasets and Tokenizer
 Below are details on how to obtain the datasets and trained sentencepiece tokenizer:
 
-**Language Modelling**: The data for language modelling can be downloaded from [this URL](https://drive.google.com/file/d/1LLMpvoWC_LgwGw9auLbF7tiolAvkncp4/view?usp=sharing)
+**Language Modelling**: The data for language modelling can be downloaded from [this URL](https://huggingface.co/datasets/castorini/afriberta-corpus)
 
 **NER**: To obtain the NER dataset, please download it from [this repository](https://github.com/masakhane-io/masakhane-ner)
 
@@ -45,5 +50,18 @@ This script will:
 
 
 ## Citation
-
-Coming soon!
+```
+@inproceedings{ogueji-etal-2021-small,
+    title = "Small Data? No Problem! Exploring the Viability of Pretrained Multilingual Language Models for Low-resourced Languages",
+    author = "Ogueji, Kelechi  and
+      Zhu, Yuxin  and
+      Lin, Jimmy",
+    booktitle = "Proceedings of the 1st Workshop on Multilingual Representation Learning",
+    month = nov,
+    year = "2021",
+    address = "Punta Cana, Dominican Republic",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.mrl-1.11",
+    pages = "116--126",
+}
+```
