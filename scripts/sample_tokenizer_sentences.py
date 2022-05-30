@@ -18,11 +18,12 @@ def get_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--output_path", type=str, required=True, help="path to store sampled sentences"
     )
+    parser.add_argument("--alpha", type=float, default=0.3, help="multinomial alpha")
 
     return parser
 
 
-def calc_num_samples_sentences(lang_num_lines: dict, alpha: float = 0.3):
+def calc_num_samples_sentences(lang_num_lines: dict, alpha: float):
     lang_prob = {}
 
     total_sentences = sum(lang_num_lines.values())
@@ -65,7 +66,7 @@ def main():
             lang_corpus[lang_code] = txt
             lang_num_lines[lang_code] = len(txt)
 
-    sampled_sentences = calc_num_samples_sentences(lang_num_lines)
+    sampled_sentences = calc_num_samples_sentences(lang_num_lines, args.alpha)
 
     for lang in tqdm(sampled_sentences.keys()):
         lines = random.sample(range(lang_num_lines[lang]), sampled_sentences[lang])
