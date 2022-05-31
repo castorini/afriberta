@@ -23,7 +23,7 @@ def get_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def calc_num_samples_sentences(lang_num_lines: dict, alpha: float):
+def calc_num_samples_sentences(lang_num_lines: dict, alpha: float) -> dict:
     lang_prob = {}
 
     total_sentences = sum(lang_num_lines.values())
