@@ -1,7 +1,6 @@
 import os
 import argparse
 import random
-import subprocess
 from tqdm import tqdm
 
 
@@ -19,6 +18,7 @@ def get_parser() -> argparse.ArgumentParser:
         "--output_path", type=str, required=True, help="path to store sampled sentences"
     )
     parser.add_argument("--alpha", type=float, default=0.3, help="multinomial alpha")
+    parser.add_argument("--seed", type=int, default=10, help="random seed")
 
     return parser
 
@@ -50,6 +50,7 @@ def calc_num_samples_sentences(lang_num_lines: dict, alpha: float):
 def main():
     parser = get_parser()
     args = parser.parse_args()
+    random.seed(args.seed)
 
     files = [
         os.path.join(args.datasets_path, file)
