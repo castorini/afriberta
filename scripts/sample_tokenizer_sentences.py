@@ -9,18 +9,14 @@ logger = logging.getLogger(__name__)
 
 
 def get_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        description="Sample Sentences from monolingual corpora to train tokenizer"
-    )
+    parser = argparse.ArgumentParser(description="Sample Sentences from monolingual corpora to train tokenizer")
     parser.add_argument(
         "--datasets_path",
         type=str,
         required=True,
         help="Path containing monolingual corpora for different languages",
     )
-    parser.add_argument(
-        "--output_path", type=str, required=True, help="path to store sampled sentences"
-    )
+    parser.add_argument("--output_path", type=str, required=True, help="path to store sampled sentences")
     parser.add_argument("--alpha", type=float, default=0.3, help="multinomial alpha")
     parser.add_argument("--seed", type=int, default=10, help="random seed")
 
@@ -80,9 +76,7 @@ def main():
     sampled_sentences = calc_num_samples_sentences(lang_num_lines, args.alpha)
 
     for lang in tqdm(sampled_sentences.keys()):
-        logger.info(
-            f"Number of sampled sentences for {lang} = {sampled_sentences[lang]}"
-        )
+        logger.info(f"Number of sampled sentences for {lang} = {sampled_sentences[lang]}")
         sentences = random.sample(lang_corpus[lang], sampled_sentences[lang])
         file = os.path.join(args.output_path, "sampled." + lang)
 
