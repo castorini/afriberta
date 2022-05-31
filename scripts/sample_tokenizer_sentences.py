@@ -2,6 +2,10 @@ import os
 import argparse
 import random
 from tqdm import tqdm
+import logging
+from typing import Dict
+
+logger = logging.getLogger(__name__)
 
 
 def get_parser() -> argparse.ArgumentParser:
@@ -23,7 +27,9 @@ def get_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def calc_num_samples_sentences(lang_num_lines: dict, alpha: float) -> dict:
+def calc_num_samples_sentences(
+    lang_num_lines: Dict[str, int], alpha: float
+) -> Dict[str, int]:
     lang_prob = {}
 
     total_sentences = sum(lang_num_lines.values())
@@ -48,14 +54,18 @@ def calc_num_samples_sentences(lang_num_lines: dict, alpha: float) -> dict:
 
 
 def main():
+
     parser = get_parser()
     args = parser.parse_args()
     random.seed(args.seed)
+    logger.info("***** Sampling Sentences for Tokenizer Training *****")
 
     files = [
         os.path.join(args.datasets_path, file)
         for file in os.listdir(args.datasets_path)
     ]
+
+    logger.info(f"Number of training files found: {len(files)}")
 
     lang_corpus = {}
     lang_num_lines = {}
@@ -70,11 +80,13 @@ def main():
     sampled_sentences = calc_num_samples_sentences(lang_num_lines, args.alpha)
 
     for lang in tqdm(sampled_sentences.keys()):
-        lines = random.sample(range(lang_num_lines[lang]), sampled_sentences[lang])
+        logger.info(
+            f"Number of sampled sentences for {lang} = {sampled_sentences[lang]}"
+        )
+        sentences = random.sample(lang_corpus[lang], sampled_sentences[lang])
         file = os.path.join(args.output_path, "sampled." + lang)
 
         with open(file, "w") as out_file:
-            sentences = list(map(lambda i: lang_corpus[lang][i], lines))
             out_file.writelines(sentences)
 
 
